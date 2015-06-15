@@ -1,0 +1,86 @@
+body {
+
+	background-color: lightgray;
+}
+
+.red {
+	color: white;
+	background-color: red;
+	font-weight: bold;
+	vertical-align: top;
+	width: 150px;
+	height: 50px;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.orange {
+	color: white;
+	background-color: orange;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-left: 30px;
+	width: 150px;
+	height: 50px;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.yellow {
+	color: black;
+	background-color: yellow;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-left: 60px;
+	width: 150px;
+	height: 50px;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.green {
+	color: white;
+	background-color: green;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-left: 90px;
+	width: 150px;
+	height: 50px;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.blue {
+	color: white;
+	background-color: blue;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-left: 120px;
+	width: 150px;
+	height: 50px;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.violet {
+	color: white;
+	background-color: violet;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-left: 150px;
+	width: 150px;
+	height: 50px;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+p:hover {
+	font-size: 1.2rem;
+	font-family: Verdana;
+	font-weight: bolder;
+	font-style: italic;
+}
+
+p {
+	margin: 0px;
+}

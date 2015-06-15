@@ -1,0 +1,69 @@
+body {
+
+	background-color: lightgray;
+}
+
+.box {
+
+	position: relative;
+	width: 50px;
+	height: 50px;
+	border: 1px solid red;
+	margin: 25px;
+	
+}
+#red {
+	right: 0px
+	;
+}
+
+#red p {
+	background-color: red;
+}
+	
+
+#orange p {
+	background-color: orange;
+}
+
+#yellow p {
+	background-color: yellow;
+}
+
+#green p {
+	background-color: green;
+}
+
+#blue p {
+	background-color: blue;
+}
+
+#violet p {
+	background-color: violet;
+}
+
+p:hover {
+	font-size: 1.2rem;
+	font-family: Verdana;
+	font-weight: bolder;
+	font-style: italic;
+}
+
+p {
+	color: white;
+	font-weight: bold;
+	margin-top: 50px;
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;
+	padding: 10px;
+}
+
+
+.arrow {
+
+	position: absolute;
+	top: 0px;
+	right: 0px;
+
+}
