@@ -11,7 +11,7 @@ var favorite = 'red'; // TODO: change this to your favorite color from the list
 
 
 if (color == 'red') {
-	conslole.log('This is my favorite color!');
+	console.log('This is my favorite color!');
 } else if (color == 'orange') {
 	console.log('This is a fruit...not my favorite color');
 
@@ -19,7 +19,7 @@ if (color == 'red') {
 	console.log('They call me mellow yellow...but not my favorite color');
 	
 } else if (color == 'green') {
-	conslole.log('Green Giant....Not my favorite though');
+	console.log('Green Giant....Not my favorite though');
 	
 } else if (color == 'blue') {
 	console.log('Blue moon.....Not my color though');
@@ -32,6 +32,10 @@ if (color == 'red') {
 
 
 var color = (favorite) ? console.log('Gratz computer...that is mine too.') : ('Not my favorite color.');
+
+
+
+
 // TODO: Have a final else that will catch indigo and violet.
 // TODO: In the else, log: I do not know anything by that color.
 
