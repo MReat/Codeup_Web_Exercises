@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Scope JS Exercise</title>
+</head>
+<body>
+
+	<h1>Scope Functions JS Exercise</h1>
+
+	<script>
+		"use strict";
+
+		(function() {
+			var myNameIs = 'Matt';
+
+			function sayHello(name) {
+				console.log("Hello " + name);
+			}
+
+			sayHello("Matt");
+
+
+			sayHello(myNameIs);
+
+
+			var random = Math.floor((Math.random()*100)+1);
+
+			function isOdd(number) {
+				console.log("The random number is " + number);
+				console.log( (number % 2 !== 0) ? number + " is odd" : number + " is even");
+			}
+			
+
+			isOdd(random);
+		})();
+	</script>
+</body>
+</html>

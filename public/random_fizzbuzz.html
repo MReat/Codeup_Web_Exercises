@@ -5,11 +5,23 @@
 <body>
 
 	<script>
+	"use strict"
 
 	var random = Math.floor((Math.random()*50)+1);
 		console.log("My random number is: " + random)
+		console.log("Now let's play Random Fizz Buzz...")
 
-	for (var random = Math.floor((Math.random()*50)+1); random <= 50
+	if (random % 5 == 0 && random % 3 == 0) {
+		console.log("FizzBuzz! You win the Internet!");
+		//break;
+	} else if (random % 3 == 0) {
+		console.log("Fizz!");
+	} else if (random % 5 == 0) {
+		console.log("Buzz!");
+	} else {
+		console.log;
+		//continue;
+	}
 
 
 	</script>
