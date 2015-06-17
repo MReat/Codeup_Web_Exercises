@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>User Interaction Excercise</title>
+</head>
+<body>
+
+	<h1>User Interaction</h1>
+		<script type="text/javascript">
+
+		// todo: Ask the user for their name.
+		//       Keep asking if an empty input is provided.
+		
+
+		do {
+			var box = prompt("What is your name?  :");
+			//console.log(name)	
+		} while(!box);
+
+		// todo: Show an alert message that welcomes the user based on their input.
+
+		alert("Welcome " + box +"!");
+
+		// todo: Ask the user if they like pizza.
+		//       Based on their answer show a creative alert message.
+
+		var pizzaConfirm = confirm("Do you like pizza?");
+
+		if (pizzaConfirm) {
+			console.log("Computers love pizza too!");
+		} else {
+			alert("Call an Ambulance!");
+		}
+		
+		</script>
+
+
+</body>
+</html>
