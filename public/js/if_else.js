@@ -14,18 +14,18 @@ var message = "";
 
 
 if (color == 'red') {
-	console.log('This is my favorite color!');
+	console.log('RED! This is my favorite color!');
 } else if (color == 'orange') {
-	console.log('This is a fruit...not my favorite color');
+	console.log('ORANGE --> This is a fruit...not my favorite color');
 
 } else if (color == 'yellow') {
-	console.log('They call me mellow yellow...but not my favorite color');
+	console.log('They call me mellow YELLOW...but not my favorite color');
 	
 } else if (color == 'green') {
-	console.log('Green Giant....Not my favorite though');
+	console.log('GREEN Giant....Not my favorite though');
 	
 } else if (color == 'blue') {
-	console.log('Blue moon.....Not my color though');
+	console.log('BLUE moon.....Not my color though');
 
 } else {
 	console.log('I do not know anything by that color');
