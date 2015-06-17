@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Break and Continue Excercises</title>
+</head>
+<body>
+	
+	<h1>Break and Continue</h1>
+
+	<script>
+
+		var random = Math.floor((Math.random()*50)+1);
+
+		 while (random % 2 == 0) {
+		 	random = Math.floor((Math.random()*50)+1);
+		 }
+
+		console.log('Random stopping point is: ' + random);
+		 
+		for (var i = 1; i <=50; i++) {
+			if  (i % 2 == 1) {
+				console.log(i);
+			} if(i == random) {
+			console.log("Yikes! Skipping number " + random);
+			continue;
+			}
+			}
+
+
+	</script>
+</body>
+</html>
