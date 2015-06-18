@@ -10,27 +10,28 @@
 		"use strict";
 
 		(function() {
-			var myNameIs = 'Matt';
 
+			//functions below
 			function sayHello(name) {
 				console.log("Hello " + name);
 			}
+			
+			function isOdd(number) {
+				console.log("The random number is " + number);
+				console.log( (number % 2 !== 0) ? number + " is odd" : number + " is even"); 
+				//Ternary above: console log if n mod 2 =/= 0 (!=) the console log result as odd; otherwise even
+			}
 
-			sayHello("Matt");
-
-
-			sayHello(myNameIs);
-
+			//variables below
+			var myNameIs = 'Matt';
 
 			var random = Math.floor((Math.random()*100)+1);
 
-			function isOdd(number) {
-				console.log("The random number is " + number);
-				console.log( (number % 2 !== 0) ? number + " is odd" : number + " is even");
-			}
-			
-
+			//call statements below
+			sayHello("Matt");
+			sayHello(myNameIs);
 			isOdd(random);
+
 		})();
 	</script>
 </body>
