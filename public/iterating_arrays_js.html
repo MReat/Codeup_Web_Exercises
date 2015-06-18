@@ -5,7 +5,7 @@
 <body>
 	<h1>Iterating Arrays</h1>
 	
-	<script type="text/javascript">
+	<script>
 
 	"use strict";	
 		
@@ -16,9 +16,20 @@
 			console.log("The third object is " + [2]);
 			console.log("The forth object is " + [3]);
 
+			//iterating excercise: console logs each item of Arr "names"
 			for (var i = 0; i < names.length; i++) {
-				console.log("The name at index " + i + " is" + " " + names[i]); //iterating excercise: console logs each item of Arr "names"
+				console.log("The name at index " + i + " is" + " " + names[i]); 
 			}
+
+			//iterating excercise: using forEach
+			names.forEach(function (element, index, array) {
+				console.log("The name at index " + index + " is: " + element);
+			});
+
+	// goofing with connecting the dots from previous lessons...
+		var x = Math.floor((Math.random()*names.length));
+		
+		console.log("A random name from the list is " + names[x]);
 	
 	</script>
 

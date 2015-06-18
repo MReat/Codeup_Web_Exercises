@@ -1,0 +1,78 @@
+<html>
+<head>
+	<title>Manipulating Arrays</title>
+</head>
+<body>
+
+<h1>Manipulating Arrays</h1>
+	<script>
+	"use strict";
+
+	
+	// Create an array holding the names of the planets of our solar system (in order, starting closest to the sun).
+	var planets = [
+	'Mercury',
+	'Venus',
+	'Earth',
+	'Mars',
+	'Jupiter',
+	'Saturn',
+	'Uranus',
+	'Neptune',
+	];
+
+	// function for the planet array
+	function logPlanets() {
+	    console.log('Here is the list of planets:');
+	    console.log(planets);
+	}
+	
+	// adding The Sun element to the array (element to beginning of array)
+	console.log('Adding "The Sun" to the beginning of the planets array.');
+	planets.unshift("The Sun");
+	logPlanets();
+
+	// adding Pluto element to the array (element at end of array)
+	console.log('Adding "Pluto" to the end of the planets array.');
+	planets.push("Pluto");
+	logPlanets();
+
+	// removing The Sun from the array (shift for beginning of array)
+	console.log('Removing "The Sun" from the beginning of the planets array.');
+	planets.shift("The Sun")
+	logPlanets();
+
+	// removing Pluto from array (pop for end of array)
+	console.log('Removing "Pluto" from the end of the planets array.');
+	planets.pop("Pluto")
+	logPlanets();
+
+	// finding location and logging Earth element; created a variable to hold the command
+	console.log('Finding and logging the index of "Earth" in the planets array.');
+	var index = planets.indexOf("Earth");
+	console.log("Earth index number is: " + index); // added this line to display the result in console.
+	logPlanets();
+
+	// splicing to remove Mars (the planet after Earth)
+	console.log('Using splice to remove the planet after Earth.');
+	planets.splice(3, 1); // remember the 1st value is the element to be manipulated (in this case removed)
+	logPlanets();
+
+	// splicing to add Mars back
+	console.log('Using splice to add back the planet after Earth.');
+	planets.splice(3,0, "Mars") // remember the 1st value is the element to be manipulated (in this case added)
+	logPlanets();
+
+	// reversing order of planets in array
+	console.log('Reversing the order of the planets array.');
+	planets.reverse();
+	logPlanets();
+
+	// sorting planets in array with default sort ()
+	console.log('Sorting the planets array.');
+	planets.sort();
+	logPlanets();
+
+	</script>
+</body>
+</html>
