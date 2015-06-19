@@ -18,7 +18,8 @@
 	'Jupiter',
 	'Saturn',
 	'Uranus',
-	'Neptune',];
+	'Neptune',
+	];
 
 	// todo: Join the planets array with pipes (|) to create a variable named 'planetsAsString'.
 	var planetsAsString = planets.join("|");
@@ -30,13 +31,22 @@
 	console.log(planetsAsArray);
 
 	//bonus work
-	var firstArray = [a, b, c, d, e];
+	
 	(function() {
-	function reverseArray(array) {
-		for (var i = 0; i < firstArray.length; )
-		}
+	var firstArray = ["a", "b", "c", "d", "e"];
 
-	}	
+	function reverseArray() {
+		for (var i = firstArray.length -1; i >= 0; i--) {
+			firstArray.push(firstArray[i]);
+			firstArray.shift(0,(firstArray.length))
+			}
+			return firstArray;
+
+		};
+	console.log("Reversed array: " + reverseArray(firstArray));
+	console.log("Original firstArray " + firstArray);
+		
+	})();
 
 	</script>
 
