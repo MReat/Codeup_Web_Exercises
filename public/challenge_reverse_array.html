@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>Reverse Challenge</title>
+</head>
+<body>
+
+	<h1>Reverse without .reverse</h1>
+	<script>
+	//bonus work
+	"use strict";
+	
+	(function() {
+	var firstArray = ["a", "b", "c", "d", "e"];
+	console.log(firstArray); // check to see the firstArray input
+
+	var reverseArray = function(localArray) {
+		var firstArray = localArray; // creates a local version of the original array
+		var comboArray = []; // used to hold the original and the mirrored values
+		
+		for (var i = firstArray.length -1; i >= 0; i--) { // takes original array length as beginning and then decriments. used to begin the reverse array value, and end in reverse order
+
+			comboArray.push(localArray[i]); //
+			};
+			return comboArray;
+
+		};
+	
+	console.log("Original firstArray " + firstArray);  // message to display original array
+	console.log("Reversed array: " + reverseArray(firstArray)); // displays reversed values of original array
+		
+	})();
+
+	</script>
+
+</body>
+</html>

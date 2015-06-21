@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Challenge 1: Hello World</title>
+</head>
+<body>
+	<script>
+	"use strict";
+
+	// Challenge #1 is to make a Hello World script that satisfies the following conditions:
+	// - When the input variable is an empty string like '' or '', the helloWorld funciton should return "Hello, World!"
+	// - When helloWorld is called with a non-empty string like helloWorld("Codeup") should return "Hello, Codeup!".
+	// - When helloWorld is called without an argument or with any other data type (a number, null, an array, boolean, or an object), then the function should return "That's not a a valid input".
+	
+
+		var helloWorld = function(input) {
+
+			if (input === '' || input === ' ') {
+				return alert("Hello, World!");
+			} else if (typeof input == "string"){
+				return alert("Hello " + input + "!");
+			} else {
+				return alert("That's not a valid input.");
+			}
+		};
+
+		helloWorld('');
+		helloWorld("Codeup");
+		helloWorld(null);
+
+			
+
+		
+
+
+	</script>
+
+
+</body>
+</html>
