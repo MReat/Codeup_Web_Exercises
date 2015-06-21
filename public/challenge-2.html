@@ -15,11 +15,11 @@
 // - He answers 'Whatever.' to anything else.
 
 var bobTalk = function(input) {
-	if (input.indexOf("?") > 0) {
+	if (input.toString().indexOf("?") > 0) {
 		return alert("Sure.");
-	} else if ((input === input.toUpperCase()) && (input !== "")) {
+	} else if ((input === input.toString().toUpperCase()) && (input !== "")) {
 		return alert("Whoa, chill out!");
-	} else if (input == false) {
+	} else if (input.toString() == false) {
 		return alert("Fine. Be that way!");
 	} else {
 		return alert("Whatever.")
@@ -31,6 +31,7 @@ bobTalk("Are you ok?");
 bobTalk("MY CAPSLOCK IS STUCK");
 bobTalk("");
 bobTalk("Life is awesome");
+bobTalk(2);
 
 
 
