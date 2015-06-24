@@ -11,9 +11,9 @@
 	<div class="container">
 		<div class="display">
 
-			<input type="text" name="first_input" id="first_input" readonly>
+			<input type="text" name="box1" id="box1" readonly>
 			<input type="text" name="operator" id="operator" readonly>
-			<input type="text" name="second_input" id="second_input" readonly>
+			<input type="text" name="box2" id="box2" readonly>
 
 		</div>
 
@@ -59,73 +59,76 @@
 </form>
 	
 	<script type="text/javascript">
+	"use strict";
 
-	// assigning functions to buttons...
 
-	var first_input = document.getElementById(first_input);
-	var operator = document.getElementById(operator);
-	var second_input = document.getElementById(second_input);
-	var btn1 = document.getElementById(btn1);
-	var btn2 = document.getElementById(btn2);
-	var btn3 = document.getElementById(btn3);
-	var btn4 = document.getElementById(btn4);
-	var btn5 = document.getElementById(btn5);
-	var btn6 = document.getElementById(btn6);
-	var btn7 = document.getElementById(btn7);
-	var btn8 = document.getElementById(btn8);
-	var btn9 = document.getElementById(btn9);
-	var btn0 = document.getElementById(btn0);
-	var btnC = document.getElementById(btnC);
-	var btnPlus = document.getElementById(btnPlus);
-	var btnMinus = document.getElementById(btnMinus);
-	var btnMultiply = document.getElementById(btnMultiply);
-	var btnDivide = document.getElementById(btnDivide);
-	var btnEqual = document.getElementById(btnEqual);
-	var btnDecimal = document.getElementById(btnDecimal);
+	var box1 = document.getElementById("box1");
+	var operator = document.getElementById("operator");
+	var box2 = document.getElementById("box2");
+	var btn1 = document.getElementById('btn1');
+	var btn2 = document.getElementById('btn2');
+	var btn3 = document.getElementById('btn3');
+	var btn4 = document.getElementById('btn4');
+	var btn5 = document.getElementById('btn5');
+	var btn6 = document.getElementById('btn6');
+	var btn7 = document.getElementById('btn7');
+	var btn8 = document.getElementById('btn8');
+	var btn9 = document.getElementById('btn9');
+	var btn0 = document.getElementById('btn0');
+	var btnC = document.getElementById('btnC');
+	var btnPlus = document.getElementById('btnPlus');
+	var btnMinus = document.getElementById('btnMinus');
+	var btnMultiply = document.getElementById('btnMultiply');
+	var btnDivide = document.getElementById('btnDivide');
+	var btnEqual = document.getElementById('btnEqual');
+	var btnDecimal = document.getElementById('btnDecimal');
 
+	// testing
+
+	// testing above
+	
 	var keyEntry = document.getElementsByTagName('button');
 		
-	for(i = 0; i < keyEntry.length; i++) {
+	for(var i = 0; i < keyEntry.length; i++) {
 		keyEntry[i].addEventListener('click', (function() {
 		
-		if (keyEntry == "+") {
-			return operator.setAttribute('+');
-		} else if (keyEntry == "-") {
+		if (keyEntry.plus == btnPlus) {
+			operator.setAttribute("value","+");
+		// } else if (keyEntry == "-") {
+			operator.setAttribute("value","-");
+		// } else if (keyEntry == "*") {
+			operator.setAttribute("value","*");
+		// } else if (keyEntry == "/") {
+			operator.setAttribute("value","/");
+		} else if (keyEntry.btn1) {
+			box1.value += 1;
+		// } else if (keyEntry == "2") {
+			box1.value += 2;
+		// } else if (keyEntry == "3") {
+			box1.value += 3;
+		// } else if (keyEntry == "4") {
+			box1.value += 4;
+		// } else if (keyEntry == "5") {
+			box1.value += 5;
+		// } else if (keyEntry == "6") {
+			box1.value += 6;
+		// } else if (keyEntry == "7") {
+			box1.value += 7;
+		// } else if (keyEntry == "8") {
+			box1.value += 8;
+		// } else if (keyEntry == "9") {
+			box1.value += 9;
+		// } else if (keyEntry == "0") {
+			box1.value += 0;
+		// } else if (keyEntry == ".") {
+			box1.value += ".";
+		// } else if (keyEntry == "=") {
+			box1.value += ???;
+		// } else if (keyEntry == "C") {
+			box1.removeAttribute("value");
+			operator.removeAttribute("valDue");
+			box2.removeAttribute("value");
 
-		} else if (keyEntry == "-") {
-		
-		} else if (keyEntry == "*") {
-
-		} else if (keyEntry == "/") {
-		
-		} else if (keyEntry == "-") {
-		
-		} else if (keyEntry == "1") {
-		
-		} else if (keyEntry == "2") {
-		
-		} else if (keyEntry == "3") {
-		
-		} else if (keyEntry == "4") {
-		
-		} else if (keyEntry == "5") {
-		
-		} else if (keyEntry == "6") {
-		
-		} else if (keyEntry == "7") {
-		
-		} else if (keyEntry == "8") {
-		
-		} else if (keyEntry == "9") {
-		
-		} else if (keyEntry == "0") {
-		
-		} else if (keyEntry == ".") {
-		
-		} else if (keyEntry == "=") {
-		
-		} else if (keyEntry == "C") {
-		
 		
 		}
 	},false))
