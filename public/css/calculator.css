@@ -12,8 +12,8 @@ h1 {
 
 .container {
 background-color: #3d4543;
-height: 470px;
-width: 390px;
+height: 500px;
+width: 420px;
 border-radius: 10px;
 position: relative;
 top: 20px;
@@ -34,8 +34,18 @@ border: solid black 3px;
 
 }
 
-.keys {
-align: margin-right;
+button {
+
+height: 60px;
+width: 60px;
+border-radius: 10px;
+font-size: 1.5em;
+font-weight: bold;
+margin: 5px;
+background-color: #778899;
+font-size: 1.5em;
+font-weight: bold;
+border: 3px;
 margin-right: auto;
 margin-left: auto;
 margin-top: 10px;
@@ -46,57 +56,48 @@ border: solid black 3px;
 }
 
 #box1 {
+
+font-size: 1.5em;
 background-color: 244,244,244;
 text-align: center;
 height: 45px;
-width: 125px;
+width: 135px;
 margin: 5px;
 border: solid red 3px;
 border-radius: 10px;
+
 }
 
 #operator {
-color: red;
-font-size: 10px;
-text-align: center;
-font-weight: bolder;
+
+font-size: 1.5em;
 background-color: 244,244,244;
+text-align: center;
 height: 45px;
 width: 45px;
+margin: 5px;
 border: solid red 3px;
 border-radius: 10px;
-margin-top: 3px;
+
 }
 
 #box2 {
+font-size: 1.5em;
 background-color: 244,244,244;
 text-align: center;
 height: 45px;
-width: 125px;
+width: 135px;
 margin: 5px;
 border: solid red 3px;
 border-radius: 10px;
 }
 
-.button_styling {
 
-font-size: 1.5em;
-font-weight: bold;
-margin: 5px;
-background-color: #778899;
-height: 60px;
-width: 60px;
-font-size: 1.5em;
-font-weight: bold;
-border-radius: 10px;
-border-color: white;
-border: 3px;
-}
-
-#btnEqual.button_styling {
+button#btnEqual {
 background-color: #cd5c5c;
 margin: 10px;
 height: 60px;
 width: 300px;
+float: right;
 }
  

@@ -15,11 +15,11 @@
 
 	var reverseArray = function(localArray) {
 		var firstArray = localArray; // creates a local version of the original array
-		var comboArray = []; // used to hold the original and the mirrored values
+		var comboArray = []; // used to hold the original array (firstArray) and the mirrored values
 		
 		for (var i = firstArray.length -1; i >= 0; i--) { // takes original array length as beginning and then decriments. used to begin the reverse array value, and end in reverse order
 
-			comboArray.push(localArray[i]); //
+			comboArray.push(localArray[i]); // creates new array and then adds (pushes)
 			};
 			return comboArray;
 

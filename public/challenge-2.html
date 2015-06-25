@@ -15,7 +15,7 @@
 // - He answers 'Whatever.' to anything else.
 
 var bobTalk = function(input) {
-	if (input.toString().indexOf("?") > 0) {
+	if (input.toString().indexOf("?") >= 0) {
 		return alert("Sure.");
 	} else if ((input === input.toString().toUpperCase()) && (input !== "")) {
 		return alert("Whoa, chill out!");
