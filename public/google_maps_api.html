@@ -11,44 +11,82 @@
 <body>
 	<h1>Google Map API Lesson</h1>
 	  
-	  <div id="map-canvas"></div>
+	  <div id="map-canvas">	</div>
 
 	  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe-7WVZBaOd-46Cro9q74z7znqq8mk9do"></script>
 
 	  <script type="text/javascript">
 
-	  // variables = intitial location (object literal), favorite restaurant (new location)
-	    var mapOptions = {
-	      zoom: 18,
-	      center: { lat: 29.4284595, lng: -98.492433 }
-	    };
-	    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-		
-		var address 
+		// var mapOptions = {
+	      
+	 //      // Zoom Setting
+	 //      zoom: 17,
+	 //      // zoom: 5,
+	 //      // zoom: 15,
+	 //      // zoom: 20,
+	     
+	 //      center: { lat: 29.430000, lng: -98.492435 }  // This sets the center of the map at our location
+	 //    };
 
+	 //    // Render the map
+	 //    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+	 //    // Create lat and long for our marker position
+	 //    var codeup = { lat: 29.428459, lng: -98.492433 };
+
+	 //    // Add the marker to our existing map
+	 //    var marker_codeup = new google.maps.Marker({
+	 //      position: codeup,
+	 //      map: map
+	 //    });
+
+	 //    // Create a new infoWindow object with content
+	 //    var infowindow = new google.maps.InfoWindow({
+	 //        content: 'Changing the world, one programmer at a time.'
+	 //    });
+
+	 //    // Open the window using our map and marker
+		//     infowindow.open(map,marker_codeup);
+
+	    // Geolocation to my favorite restaurant
+		// Variables for favorite restaurant
+		var address = '5433 Blanco Rd, San Antonio, TX 78216';
 		var geocoder = new google.maps.Geocoder();
-	
-	// Geocode our address
+		var map;
+		
 		geocoder.geocode( { 'address': address}, function(results, status) {
 		  if (status == google.maps.GeocoderStatus.OK) {
 		    var mapOptions = {
-		      zoom: 18,
+		      zoom: 17,
 		      center: results[0].geometry.location
 		    }
-		    // Render the map
-		    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+		    var map_favorite_restaurant = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+			console.log(map_favorite_restaurant);
 		  } else {
-		    // Show an error message with the status if our request fails
 		    alert("Geocoding was not successful - STATUS: " + status);
 		  }
+		}); 
+		
+		
+		var vietnam_garden =  { lat: 29.502897, lng: -98.508163 }; // lat/lng from google JS
+
+	    var marker_vietnam_garden = new google.maps.Marker({
+	    	position: vietnam_garden,
+	    	map: map
+	    });
+
+	    console.log(marker_vietnam_garden);
+	    
+	    var vietnam_garden_infowindow = new google.maps.InfoWindow({
+		        content: 'Where I met found my wife...and the best asian food in San Antonio'
 		});
 
-	  
-	  	// var address [{
-	  	// 	'codeup' : '112 E Pecan St, San Antonio, TX, 78205',
-	  	// 	'vietnam_garden' : '5433 Blanco Rd, San Antonio, TX 78216'
-	  	// }]
+
+	    vietnam_garden_infowindow.open(map,marker_vietnam_garden);
+		console.log(vietnam_garden_infowindow);
+		  
 	  </script>
+
 
 </body>
 </html>
