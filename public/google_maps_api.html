@@ -10,82 +10,122 @@
 </head>
 <body>
 	<h1>Google Map API Lesson</h1>
+	<button name="favorite_restaurant" id="vietnamGarden">Favorite Restaurant</button>
+	<button name="second_favorite_restaurant" id="elBucanero">Second Favorite Restaurant</button>
 	  
-	  <div id="map-canvas">	</div>
+	<div id="map-canvas"></div>
 
-	  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe-7WVZBaOd-46Cro9q74z7znqq8mk9do"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe-7WVZBaOd-46Cro9q74z7znqq8mk9do"></script>
 
-	  <script type="text/javascript">
+	<script type="text/javascript">
 
-		// var mapOptions = {
+		var mapOptions = {
 	      
-	 //      // Zoom Setting
-	 //      zoom: 17,
-	 //      // zoom: 5,
-	 //      // zoom: 15,
-	 //      // zoom: 20,
+	      // Zoom Setting
+	      zoom: 17,
+	      // zoom: 5,
+	      // zoom: 15,
+	      // zoom: 20,
 	     
-	 //      center: { lat: 29.430000, lng: -98.492435 }  // This sets the center of the map at our location
-	 //    };
+	      center: { lat: 29.430000, lng: -98.492435 }  // This sets the center of the map at our location
+	    };
 
-	 //    // Render the map
-	 //    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+	    // Render the map
+	    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-	 //    // Create lat and long for our marker position
-	 //    var codeup = { lat: 29.428459, lng: -98.492433 };
+	    // Create lat and long for our marker position
+	    var codeup = { lat: 29.428459, lng: -98.492433 };
 
-	 //    // Add the marker to our existing map
-	 //    var marker_codeup = new google.maps.Marker({
-	 //      position: codeup,
-	 //      map: map
-	 //    });
-
-	 //    // Create a new infoWindow object with content
-	 //    var infowindow = new google.maps.InfoWindow({
-	 //        content: 'Changing the world, one programmer at a time.'
-	 //    });
-
-	 //    // Open the window using our map and marker
-		//     infowindow.open(map,marker_codeup);
-
-	    // Geolocation to my favorite restaurant
-		// Variables for favorite restaurant
-		var address = '5433 Blanco Rd, San Antonio, TX 78216';
-		var geocoder = new google.maps.Geocoder();
-		var map;
-		
-		geocoder.geocode( { 'address': address}, function(results, status) {
-		  if (status == google.maps.GeocoderStatus.OK) {
-		    var mapOptions = {
-		      zoom: 17,
-		      center: results[0].geometry.location
-		    }
-		    var map_favorite_restaurant = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-			console.log(map_favorite_restaurant);
-		  } else {
-		    alert("Geocoding was not successful - STATUS: " + status);
-		  }
-		}); 
-		
-		
-		var vietnam_garden =  { lat: 29.502897, lng: -98.508163 }; // lat/lng from google JS
-
-	    var marker_vietnam_garden = new google.maps.Marker({
-	    	position: vietnam_garden,
-	    	map: map
+	    // Add the marker to our existing map
+	    var marker_codeup = new google.maps.Marker({
+	      position: codeup,
+	      map: map
 	    });
 
-	    console.log(marker_vietnam_garden);
-	    
-	    var vietnam_garden_infowindow = new google.maps.InfoWindow({
-		        content: 'Where I met found my wife...and the best asian food in San Antonio'
-		});
+	    // Create a new infoWindow object with content
+	    var infowindow = new google.maps.InfoWindow({
+	        content: 'Changing the world, one programmer at a time.'
+	    });
 
+	    // Open the window using our map and marker
+		    infowindow.open(map,marker_codeup);
 
-	    vietnam_garden_infowindow.open(map,marker_vietnam_garden);
-		console.log(vietnam_garden_infowindow);
-		  
-	  </script>
+    // <-- Favorite Restaurant -->
+
+		document.getElementById("vietnamGarden").addEventListener("click", favoriteRestaurant,false);
+
+		function favoriteRestaurant() {
+			var address = '5433 Blanco Rd, San Antonio, TX 78216';
+			var geocoder = new google.maps.Geocoder();
+			
+			var marker2;
+
+			geocoder.geocode( { 'address': address}, function(results, status) {
+				console.log(results)
+			  if (status == google.maps.GeocoderStatus.OK) {
+			    var mapOptions = {
+			      zoom: 17,
+			      center: results[0].geometry.location
+			    }
+			    var map_favorite_restaurant = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+				console.log(map_favorite_restaurant);
+				var infowindow = new google.maps.InfoWindow({
+			        content: 'Where I met found my wife...and the best asian food in San Antonio'
+
+				});
+			    var marker2 = new google.maps.Marker({
+			    	position: results[0].geometry.location,
+			    	map: map_favorite_restaurant
+			    });
+			    infowindow.open(map_favorite_restaurant,marker2);
+			  } else {
+			    alert("Geocoding was not successful - STATUS: " + status);
+			  }
+			}); 
+		};
+
+		// end of section...
+	
+	// <- Second Favorite Restaurant -->
+		
+		document.getElementById("elBucanero").addEventListener("click", favoriteRestaurant2,false);
+
+		function favoriteRestaurant2() {
+			var address = '16505 Blanco Rd, San Antonio, TX 78232';			
+			var geocoder = new google.maps.Geocoder();
+			
+			var marker3;
+
+			geocoder.geocode( { 'address': address}, function(results, status) {
+				console.log(results)
+			  if (status == google.maps.GeocoderStatus.OK) {
+			    var mapOptions = {
+			      zoom: 17,
+			      center: results[0].geometry.location
+			    }
+			    
+			    var map_second_favorite_restaurant = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+				console.log(map_second_favorite_restaurant);
+				
+				var infowindow = new google.maps.InfoWindow({
+			        content: 'Marisco Y Mariachis!!! Best Ceviche Evah!'
+				});
+			    
+			    var marker3 = new google.maps.Marker({
+			    	position: results[0].geometry.location,
+			    	map: map_second_favorite_restaurant
+			    });
+			    
+			    infowindow.open(map_second_favorite_restaurant,marker3);
+			  
+			  } else {
+			    alert("Geocoding was not successful - STATUS: " + status);
+			  }
+			});   
+		};
+	// end of section...
+
+	</script>
 
 
 </body>
