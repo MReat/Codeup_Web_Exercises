@@ -18,13 +18,14 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBe-7WVZBaOd-46Cro9q74z7znqq8mk9do"></script>
 
 	<script type="text/javascript">
+	"use strict";	
 
 		var mapOptions = {
 	      
 	      // Zoom Setting
-	      zoom: 17,
+	      // zoom: 17,
 	      // zoom: 5,
-	      // zoom: 15,
+	      zoom: 15,
 	      // zoom: 20,
 	     
 	      center: { lat: 29.430000, lng: -98.492435 }  // This sets the center of the map at our location
@@ -60,7 +61,7 @@
 			
 			var marker2;
 
-			geocoder.geocode( { 'address': address}, function(results, status) {
+			geocoder.geocode( { 'address': address}, function(results, status) { // look at creating other functions to combine repeated code
 				console.log(results)
 			  if (status == google.maps.GeocoderStatus.OK) {
 			    var mapOptions = {
