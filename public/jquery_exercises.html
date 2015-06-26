@@ -3,9 +3,12 @@
 <head>
 	<title>JQuery Excercise</title>
 </head>
-<body>
+<body class="original" id="text-field">
 
 	<h1>JQuery Exercise</h1>
+
+		<input type"text" placeholder="info">Test</input>
+
 		<!-- // changing code examples below: -->
 		<p class="codeup" id="paragraph"> 
 		<!-- <p id="paragraph codeup"> -->  
@@ -42,30 +45,96 @@
 	<script type="text/javascript" src="/js/jquery-1.11.3.js"></script>
 	
 	<script>
-	
-	$(document).ready(function() {
-		alert("The DOM has finished loading!")
-	});
 
-	$(document).ready(function () {
-		var contents = $('.items').html();
-		var otherContents = $('.items').text();
-		var item1 = $('#first_set').text();
-		var item2 = $('#second_set').html();
-		alert(contents);
-		alert(otherContents);
-		alert(item1);
-		alert(item2);
-		$('#second_set').css('background-color', '#9966FF').css('color', '#FFF');
-		$('.codeup').css({
-			'border': "red solid 1px",
-			'font-size': "200%",
-			'font-weight': "bolder",
-			'color': "00FF00"
+		$(document).ready(function() {
+ 
+			// var divClone = $(.original).clone();
+
+			$('h1').click(function() {
+				$(this).css("background-color", "salmon");	
+			});
+			
+			$('p').dblclick(function() {
+				$(this).css("font-size", "18px");
+			});
+
+			$('li').hover(function() {
+				$(this).css("color", "red");
+			}, function() {
+				$(this).css("color", "black");
+			});
+
+			$('text-field').keydown(function(e) {
+				console.log.('keydown')
+				console.log(e);
+			});
+
 		});
-	})
-	
+
 	</script>
+
+
+<!-- 	
+	// $(document).ready(function() {
+	// 	alert("The DOM has finished loading!")
+	// });
+
+	// $(document).ready(function () {
+	// 	var contents = $('.items').html();
+	// 	var otherContents = $('.items').text();
+	// 	var item1 = $('#first_set').text();
+	// 	var item2 = $('#second_set').html();
+	// 	alert(contents);
+	// 	alert(otherContents);
+	// 	alert(item1);
+	// 	alert(item2);
+		
+	// 	var OMG = function (){
+	// 		$('#second_set').css('background-color', '#9966FF').css('color', '#FFF');
+	// 		$('.codeup').css({
+	// 			'border': "red solid 1px",
+	// 			'font-size': "200%",
+	// 			'font-weight': "bolder",
+	// 			'color': "00FF00"
+	// 		});
+	// 	};
+	// 	alert(OMG);
+	// 	OMG();
+	// 	console.log(OMG());
+		
+	// 	var change = function() {
+	// 		// $('li').css('font-size', '20px'); 
+	// 		// $('h1').css("background-color","yellow"); // 1st iteration of this highlighting exercise
+	// 		// $('p').css("background-color","yellow");
+	// 		// $('li').css("background-color","yellow");
+	// 		$('h1, p, li').css("background-color", "yellow");
+	// 	}
+	// 	alert(change);
+	// 	change();
+	// 	console.log(change());
+
+	// 	var h1Alert = $('h1').text();
+	// 	alert("Danger Will Robinson...Change on " + h1Alert);
+	// 	})
+
+	// var originalState = ('*').css({
+	// 	'background-color': 'white',
+	// 	'color': 'black',
+	// 	'font-family': 'Times New Roman',
+	// 	'font-size': "100%",
+	// 	'border': 'none',
+	// 	'font-weight': 'normal'
+	
+	// var originalStateCheck = function(){
+
+	// 	confirm("Do you want to go back to original stying?")
+
+	// 	if (originalStateCheck) {
+	// 		originalState;
+	// 	}
+	// };
+ -->	
+	<!-- </script> -->
 
 </body>
 </html>
