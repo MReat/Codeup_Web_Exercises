@@ -15,6 +15,14 @@
 			$('body').on('click', function () {
 				$('dd').toggle();
 			})	
+			$('li').css("background-color", "#FF0");
+			$('li').parent("background-color", "#0F0");
+			$('h3').css('background-color', "#0F0")
+			$('.national-parks').children().each(function () { // review this buggy code
+				if (li == 0) {
+				$("li").css('font-weight','bold');
+				}
+			})
 		});
 
 	</script>
@@ -49,7 +57,27 @@
 
 	</dl>
 
-
+		<h3>Yosemite</h3>
+			<ul class="national-parks">
+				<li>Fun Fact #1</li>
+				<li>Fun Fact #2</li>
+				<li>Fun Fact #3</li>
+				<li>Fun Fact #4</li>
+			</ul>
+		<h3>Grand Canyon</h3>
+			<ul>
+				<li>Fun Fact #1</li>
+				<li>Fun Fact #2</li>
+				<li>Fun Fact #3</li>
+				<li>Fun Fact #4</li>
+			</ul>		
+		<h3>Glacier</h3>
+			<ul>
+				<li>Fun Fact #1</li>
+				<li>Fun Fact #2</li>
+				<li>Fun Fact #3</li>
+				<li>Fun Fact #4</li>
+			</ul>
 
 </body>
 </html>
