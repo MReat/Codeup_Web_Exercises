@@ -4,7 +4,7 @@
 	<title>JQuery FAQ Exercise</title>
 	
 	<style>
-	.fun-facts-additional-formatting {
+	.invisible {
 		display: none;
 	}
 	</style>
@@ -34,15 +34,17 @@
 			// 	$('li').toggle();
 			// })
 			// using toggleClass() method
-			$('fun-facts-additional-formatting').children().click(function (e) {
+			$('li').click(function (e) {
 				e.preventDefault;
-				$('this').parent().toggleClass;
+				console.log(e);
+				$(this).parent().addClass('invisible');
 
 			})
-			console.log($('.item-toggle').on('click', function (e) {
-				e.preventDefault('.item-toggle');
-				$('.fun-facts-additional-formatting').toggleClass();
-			}));
+			$('#item-toggle').on('click', function (e) {
+				e.preventDefault();
+				console.log(e);
+				$('ul').toggleClass();
+			});
 
 		});
 
@@ -79,27 +81,27 @@
 	</div>
 		<aside>
 		<h3><span id="fun-facts">National Parks "Fun Facts"</span></h3>
-			<ul class="fun-facts-additional-formatting">Yosemite
+			<ul>Yosemite
 				<li>Fun Fact #1</li>
 				<li>Fun Fact #2</li>
 				<li>Fun Fact #3</li>
 				<li>Fun Fact #4</li>
 			</ul>
 				
-			<ul class="fun-facts-additional-formatting">Grand Canyon
+			<ul>Grand Canyon
 				<li>Fun Fact #1</li>
 				<li>Fun Fact #2</li>
 				<li>Fun Fact #3</li>
 				<li>Fun Fact #4</li>
 			</ul>		
 			
-			<ul class="fun-facts-additional-formatting">Glacier	
+			<ul>Glacier	
 				<li>Fun Fact #1</li>
 				<li>Fun Fact #2</li>
 				<li>Fun Fact #3</li>
 				<li>Fun Fact #4</li>
 			</ul>
 		</aside>
-		<a href="#" id="item-toggle">Item Toggle</a>
+		<a href="#" id="item-toggle">Item Toggle (for 2nd method)</a>
 </body>
 </html>
