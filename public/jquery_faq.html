@@ -2,27 +2,48 @@
 <html>
 <head>
 	<title>JQuery FAQ Exercise</title>
+	
+	<style>
+	.fun-facts-additional-formatting {
+		display: none;
+	}
+	</style>
+	
 	<script type="text/javascript" src="/js/jquery-1.11.3.js"></script>
 	<script>
 		"use strict";
 		$(document).ready(function() { 
-
-			$('dd').addClass("invisible");
-			$('.invisible').css('display', 'none');
+			// 1st section of the FAQ exercises
 			$('#parkTitle').css('color', 'green').css('font-size', '125%').css('text-decoration', 'underline');
 			$('#instructions').css('color', 'black');
 			$('dd').css('padding', '20px');
-			$('body').on('click', function () {
+			$('div').click(function (e) {
+				e.preventDefault();
 				$('dd').toggle();
-			})	
-			$('li').css("background-color", "#FF0");
-			$('li').parent("background-color", "#0F0");
-			$('h3').css('background-color', "#0F0")
-			$('.national-parks').children().each(function () { // review this buggy code
-				if (li == 0) {
-				$("li").css('font-weight','bold');
-				}
+			});
+			$('#top-10-parks').css('border', 'solid green 5px').css('padding-left', '8px').css('margin-top', '10px').css('background-color', '#d8d8d8').css('margin-bottom','15px');
+			// 2nd section of the FAQ exercise
+			$('#fun-facts').css('color', 'green').css('font-size', '125%').css("text-decoration", 'underline');
+			$('aside').children().each(function () {
+				$(this).children().first().css('font-weight','bold');
+			});			
+			// Toggle Scripts
+			// using the toggle() method
+			// $('aside').click(function (e) {
+			// 	e.preventDefault();
+			// 	$('li').toggle();
+			// })
+			// using toggleClass() method
+			$('fun-facts-additional-formatting').children().click(function (e) {
+				e.preventDefault;
+				$('this').parent().toggleClass;
+
 			})
+			console.log($('.item-toggle').on('click', function (e) {
+				e.preventDefault('.item-toggle');
+				$('.fun-facts-additional-formatting').toggleClass();
+			}));
+
 		});
 
 	</script>
@@ -33,51 +54,52 @@
 	<h1>Fodor's Top 10 National Parks (2015)</h1>
 	<a href="http://www.fodors.com/news/photos/10-best-national-parks-to-visit-in-2015#!1-intro" target="_blank">Fodor's 2015 Top 10 National Parks</a>
 
-	<dl><span id="parkTitle">National Parks</span> <span id="instructions">(click on body for details)</span>
-		<dt>Yosemite</dt>
-			<dd>Yosemite National Park became even more famous in January 2015, making headlines around the world when rock climbers Tommy Caldwell and Kevin Jorgeson completed the first free ascent of El Capitan’s Dawn Wall. The 3,000-foot smooth granite wall is widely considered the hardest rock climb on the planet. (Prime yourself on the history of Yosemite’s colorful rock climbing counter-culture by watching “Valley Uprising,” a 2014 documentary by Sender Films.) In March, the park began gearing up for its 125th anniversary, which takes place on October 1, 2015, by launching a free commemorative exhibit that will run through the end of the year. Catch “The Lure and Lore of Yosemite” at the Yosemite Sierra Visitors Bureau in Oakhurst, where guests can indulge in the inspired writings of Yosemite’s early advocates, like John Muir, and stroll among maps, artwork, and historical documents from the late 1800s.</dd>
-		<dt>Grand Canyon</dt>
-			<dd>At the bottom of the Grand Canyon, some 5,200-feet deep, runs the mighty Colorado River, churning for 277 jaw-droppingly scenic miles and serving up what’s arguably the most classic whitewater rafting in the world. While many of the park’s five million annual visitors admire the river from above, few experience it up close. That’s because it’s a significant effort to hike or paddle to the bottom of the Grand Canyon—part of what makes standing at the bottom such a surreal experience. But all that may change due to a project called The Grand Canyon Escalade. At the time of writing, the Navajo Nation was about to weigh in on the plan, which would build a two million square foot construction project, including a tram to the canyon base, on the canyon’s east border. Whatever the outcome, the directive for nature lovers and environmentalists is clear: Get thee to the Grand Canyon—this mythical place, one of the Seven Natural Wonders of the World, may be about to change.</dd>
-		<dt>Glacier</dt>
-			<dd>If massive mountain peaks, pristine alpine lakes, and of course, glaciers, are your affinity, it’s hard to beat Glacier National Park. And this is one national park trip you can’t afford to put off any longer—only about twenty-five glaciers remain of the 150 that existed in 1850. And by about 2030, glacier regression models put that number at zero. Need more convincing? In 2015, Glacier National Park expects its one hundred millionth visitor, which might be you. In keeping with that theme, book a lake view balcony room at Many Glacier Hotel, which celebrates its one hundredth Anniversary on July 4. The hotel is simple and rustic but widely regarded as one of the most scenic national park lodges in the nation thanks to its location on the shores of stunning Swiftcurrent Lake.</dd>
-		<dt>Denali</dt>
-			<dd>Alaska’s most popular tourist attraction offers more than six million acres of some of the wildest land in America, including the tallest mountain on the continent: 20,320-foot Mount McKinley. For 2015, Denali Education Center is unveiling a new one-of-a-kind program called “Life in Denali,” designed to address the inevitable questions that arise about life in the far north. The program gives guests an insider’s glimpse into why people settle—and stay—in remote Alaska. Nightly at 5 p.m., local residents will share stories about dressing for severe cold, enduring winter darkness, interacting with wildlife, and other everyday adventures in Alaska (mid-May through September; $25 per person).</dd>
-		<dt>Chaco Culture</dt>
-			<dd>The Chaco Culture National Historic Park, a UNESCO World Heritage Site, encompasses the sacred ancestral homelands of the Hopi and Pueblo people and with more than 4,000 prehistoric archeological sites, contains the most extensive site of historic pueblos in the American Southwest. But that’s not all. In August 2013, Chaco Culture was recognized as an International Dark Sky Park for phenomenal stargazing, joining the ranks of only three other U.S. national parks. The remote park is located in the San Juan Basin in northwestern New Mexico, protected from the pollution created by cities and accessible only by dirt road. Word on the street is to get there sooner rather than later, at least for night sky viewing, because the park may soon have company in the form of fracking, according to the Albuquerque Journal.</dd>
-		<dt>Acacia</dt>
-			<dd>It’s been said that iconic Acadia National Park is 47,000 acres of superlatives: the only national park in Maine, the oldest national park east of the Mississippi, the home of Cadillac Mountain—the tallest peak on the Atlantic Coast, and the first national park in America to have an endowed trail system. This year marks the fifteenth anniversary of Acadia Trails Forever, established in 2000 by Friends of Acadia and Acadia National Park to repair the celebrated 130-mile hiking trail. Since then, the program has restored many miles of lost trails in the park that had fallen into disuse since the heyday of trail-building in the early twentieth century, including the hundred-year-old Homans Path, built in 1915 and featuring 400 spiraling granite stairs. 2015 is also the twentieth anniversary of Acadia's Artist-in-Residence Program, which provides writers, composers, and visual and performing artists the chance to practice their art in the beautiful park landscape.</dd>
-		<dt>Rocky Mountain</dt>
-			<dd>Mountain majesty is the predominant theme at Rocky Mountain National Park, where seventy-two peaks stand taller than 12,000 feet, including a handful of “thirteeners” and 14,259-foot Longs Peak. In typical outdoorsy Colorado style, more than 300 miles of hiking trails crisscross the park’s spectacular landscape. On September 4, 2015, Rocky Mountain National Park will turn one hundred, and the park decided that should entail a yearlong Centennial Celebration, which commenced last September. Special activities—including speakers, exhibits, a seminar series, community events, and free ranger-led walks, talks, and evening programs—are ongoing. View the park’s master Centennial Celebration Calendar here. The festivities conclude with a Re-Dedication Ceremony at 11:00 a.m. on September 4, 2015, at Glacier Basin Campground, with family activities, speakers, and music.</dd>
-		<dt>Mammoth Cave</dt>
-			<dd>There’s no place quite like Mammoth Cave National Park, home of the longest cave system on Earth. So far, 400 miles of the subterranean passageway have been explored, and a portion of these otherworldly caverns and tunnels are open to the general public through ranger-led tours spanning 1.25-4 hours. In 2015, the park stepped up its efforts to protect the cave’s most famous residents—bats—by launching its first podcast “Signals of a Wildlife Disaster” in March. Thousands of the fascinating creatures (the only mammals that can fly) call Mammoth home. Unfortunately, their numbers have steadily dwindled over the past 150 years. The latest threat (and the topic of the podcast), White-Nose Syndrome, which does not affect humans, has been spreading across the eastern U.S. since 2006, killing millions of bats.</dd>
-		<dt>Olympic</dt>
-			<dd>The magic of Olympic National Park is undeniable—nearly one million acres of raw, pristine wilderness ranging from the Pacific Coastline to the glacier-capped peaks of the Olympic Mountains, with old growth forests in between. The park is also an International Biosphere Reserve and a World Heritage Site, and 95% of the land is designated wilderness, meaning not even a road runs through it. The park garnered international acclaim in 2011, when it began the largest dam removal in history to allow the Elwha River to easily flow from the Olympic Mountains to the Strait of Juan de Fuca. Both the Elwha and Glines Canyon dams have since been torn down, and the Lake Mills and Lake Aldwell reservoirs drained. In 2015, Olympic National Park will open a new facility (eta: mid June) called The Glines Canyon Spillway Overlook. Guests can expect stellar views into the 200-foot deep canyon to watch the newly freed Elwha River flowing, as well as of the former lakebed of the Lake Mills Reservoir, where thousands of native plants are re-establishing themselves after one hundred years underwater.</dd>
-		<dt>Grand Teton</dt>
-			<dd>It may be only 10 miles from famed Yellowstone, but Grand Teton National Park is a visual masterpiece in its own right. Not only is it the home of the major peaks of the dramatic Teton Range, including its namesake, 13,775-foot Grand Teton, but also the West’s most defining wildlife. Think grizzly and black bears, elk, moose, bison, pronghorns, big horned sheep, wolves, coyotes, river otters, beavers, badgers, snowshoe hares, marmots, bald eagles, trumpeter swans, and trout, to name a few. The wildlife is so prevalent that photo safaris are among the most popular of the park’s tour offerings. After a moderate snowpack this winter, spring has come early to Grand Teton National Park, which is great news for summer 2015 visitors. Most of the major passes and divides will likely be passable without the aid of crampons and ice axes by early- to mid-July. This means wildflowers may also be slightly ahead of schedule.</dd>
-
-	</dl>
-
-		<h3>Yosemite</h3>
-			<ul class="national-parks">
+	<div id="top-10-parks">
+		<dl><span id="parkTitle">National Parks</span> <span id="instructions">(click on body for details)</span>
+			<dt>Yosemite</dt>
+				<dd>Yosemite National Park became even more famous in January 2015, making headlines around the world when rock climbers Tommy Caldwell and Kevin Jorgeson completed the first free ascent of El Capitan’s Dawn Wall. The 3,000-foot smooth granite wall is widely considered the hardest rock climb on the planet. (Prime yourself on the history of Yosemite’s colorful rock climbing counter-culture by watching “Valley Uprising,” a 2014 documentary by Sender Films.) In March, the park began gearing up for its 125th anniversary, which takes place on October 1, 2015, by launching a free commemorative exhibit that will run through the end of the year. Catch “The Lure and Lore of Yosemite” at the Yosemite Sierra Visitors Bureau in Oakhurst, where guests can indulge in the inspired writings of Yosemite’s early advocates, like John Muir, and stroll among maps, artwork, and historical documents from the late 1800s.</dd>
+			<dt>Grand Canyon</dt>
+				<dd>At the bottom of the Grand Canyon, some 5,200-feet deep, runs the mighty Colorado River, churning for 277 jaw-droppingly scenic miles and serving up what’s arguably the most classic whitewater rafting in the world. While many of the park’s five million annual visitors admire the river from above, few experience it up close. That’s because it’s a significant effort to hike or paddle to the bottom of the Grand Canyon—part of what makes standing at the bottom such a surreal experience. But all that may change due to a project called The Grand Canyon Escalade. At the time of writing, the Navajo Nation was about to weigh in on the plan, which would build a two million square foot construction project, including a tram to the canyon base, on the canyon’s east border. Whatever the outcome, the directive for nature lovers and environmentalists is clear: Get thee to the Grand Canyon—this mythical place, one of the Seven Natural Wonders of the World, may be about to change.</dd>
+			<dt>Glacier</dt>
+				<dd>If massive mountain peaks, pristine alpine lakes, and of course, glaciers, are your affinity, it’s hard to beat Glacier National Park. And this is one national park trip you can’t afford to put off any longer—only about twenty-five glaciers remain of the 150 that existed in 1850. And by about 2030, glacier regression models put that number at zero. Need more convincing? In 2015, Glacier National Park expects its one hundred millionth visitor, which might be you. In keeping with that theme, book a lake view balcony room at Many Glacier Hotel, which celebrates its one hundredth Anniversary on July 4. The hotel is simple and rustic but widely regarded as one of the most scenic national park lodges in the nation thanks to its location on the shores of stunning Swiftcurrent Lake.</dd>
+			<dt>Denali</dt>
+				<dd>Alaska’s most popular tourist attraction offers more than six million acres of some of the wildest land in America, including the tallest mountain on the continent: 20,320-foot Mount McKinley. For 2015, Denali Education Center is unveiling a new one-of-a-kind program called “Life in Denali,” designed to address the inevitable questions that arise about life in the far north. The program gives guests an insider’s glimpse into why people settle—and stay—in remote Alaska. Nightly at 5 p.m., local residents will share stories about dressing for severe cold, enduring winter darkness, interacting with wildlife, and other everyday adventures in Alaska (mid-May through September; $25 per person).</dd>
+			<dt>Chaco Culture</dt>
+				<dd>The Chaco Culture National Historic Park, a UNESCO World Heritage Site, encompasses the sacred ancestral homelands of the Hopi and Pueblo people and with more than 4,000 prehistoric archeological sites, contains the most extensive site of historic pueblos in the American Southwest. But that’s not all. In August 2013, Chaco Culture was recognized as an International Dark Sky Park for phenomenal stargazing, joining the ranks of only three other U.S. national parks. The remote park is located in the San Juan Basin in northwestern New Mexico, protected from the pollution created by cities and accessible only by dirt road. Word on the street is to get there sooner rather than later, at least for night sky viewing, because the park may soon have company in the form of fracking, according to the Albuquerque Journal.</dd>
+			<dt>Acacia</dt>
+				<dd>It’s been said that iconic Acadia National Park is 47,000 acres of superlatives: the only national park in Maine, the oldest national park east of the Mississippi, the home of Cadillac Mountain—the tallest peak on the Atlantic Coast, and the first national park in America to have an endowed trail system. This year marks the fifteenth anniversary of Acadia Trails Forever, established in 2000 by Friends of Acadia and Acadia National Park to repair the celebrated 130-mile hiking trail. Since then, the program has restored many miles of lost trails in the park that had fallen into disuse since the heyday of trail-building in the early twentieth century, including the hundred-year-old Homans Path, built in 1915 and featuring 400 spiraling granite stairs. 2015 is also the twentieth anniversary of Acadia's Artist-in-Residence Program, which provides writers, composers, and visual and performing artists the chance to practice their art in the beautiful park landscape.</dd>
+			<dt>Rocky Mountain</dt>
+				<dd>Mountain majesty is the predominant theme at Rocky Mountain National Park, where seventy-two peaks stand taller than 12,000 feet, including a handful of “thirteeners” and 14,259-foot Longs Peak. In typical outdoorsy Colorado style, more than 300 miles of hiking trails crisscross the park’s spectacular landscape. On September 4, 2015, Rocky Mountain National Park will turn one hundred, and the park decided that should entail a yearlong Centennial Celebration, which commenced last September. Special activities—including speakers, exhibits, a seminar series, community events, and free ranger-led walks, talks, and evening programs—are ongoing. View the park’s master Centennial Celebration Calendar here. The festivities conclude with a Re-Dedication Ceremony at 11:00 a.m. on September 4, 2015, at Glacier Basin Campground, with family activities, speakers, and music.</dd>
+			<dt>Mammoth Cave</dt>
+				<dd>There’s no place quite like Mammoth Cave National Park, home of the longest cave system on Earth. So far, 400 miles of the subterranean passageway have been explored, and a portion of these otherworldly caverns and tunnels are open to the general public through ranger-led tours spanning 1.25-4 hours. In 2015, the park stepped up its efforts to protect the cave’s most famous residents—bats—by launching its first podcast “Signals of a Wildlife Disaster” in March. Thousands of the fascinating creatures (the only mammals that can fly) call Mammoth home. Unfortunately, their numbers have steadily dwindled over the past 150 years. The latest threat (and the topic of the podcast), White-Nose Syndrome, which does not affect humans, has been spreading across the eastern U.S. since 2006, killing millions of bats.</dd>
+			<dt>Olympic</dt>
+				<dd>The magic of Olympic National Park is undeniable—nearly one million acres of raw, pristine wilderness ranging from the Pacific Coastline to the glacier-capped peaks of the Olympic Mountains, with old growth forests in between. The park is also an International Biosphere Reserve and a World Heritage Site, and 95% of the land is designated wilderness, meaning not even a road runs through it. The park garnered international acclaim in 2011, when it began the largest dam removal in history to allow the Elwha River to easily flow from the Olympic Mountains to the Strait of Juan de Fuca. Both the Elwha and Glines Canyon dams have since been torn down, and the Lake Mills and Lake Aldwell reservoirs drained. In 2015, Olympic National Park will open a new facility (eta: mid June) called The Glines Canyon Spillway Overlook. Guests can expect stellar views into the 200-foot deep canyon to watch the newly freed Elwha River flowing, as well as of the former lakebed of the Lake Mills Reservoir, where thousands of native plants are re-establishing themselves after one hundred years underwater.</dd>
+			<dt>Grand Teton</dt>
+				<dd>It may be only 10 miles from famed Yellowstone, but Grand Teton National Park is a visual masterpiece in its own right. Not only is it the home of the major peaks of the dramatic Teton Range, including its namesake, 13,775-foot Grand Teton, but also the West’s most defining wildlife. Think grizzly and black bears, elk, moose, bison, pronghorns, big horned sheep, wolves, coyotes, river otters, beavers, badgers, snowshoe hares, marmots, bald eagles, trumpeter swans, and trout, to name a few. The wildlife is so prevalent that photo safaris are among the most popular of the park’s tour offerings. After a moderate snowpack this winter, spring has come early to Grand Teton National Park, which is great news for summer 2015 visitors. Most of the major passes and divides will likely be passable without the aid of crampons and ice axes by early- to mid-July. This means wildflowers may also be slightly ahead of schedule.</dd>
+	</div>
+		<aside>
+		<h3><span id="fun-facts">National Parks "Fun Facts"</span></h3>
+			<ul class="fun-facts-additional-formatting">Yosemite
 				<li>Fun Fact #1</li>
 				<li>Fun Fact #2</li>
 				<li>Fun Fact #3</li>
 				<li>Fun Fact #4</li>
 			</ul>
-		<h3>Grand Canyon</h3>
-			<ul>
+				
+			<ul class="fun-facts-additional-formatting">Grand Canyon
 				<li>Fun Fact #1</li>
 				<li>Fun Fact #2</li>
 				<li>Fun Fact #3</li>
 				<li>Fun Fact #4</li>
 			</ul>		
-		<h3>Glacier</h3>
-			<ul>
+			
+			<ul class="fun-facts-additional-formatting">Glacier	
 				<li>Fun Fact #1</li>
 				<li>Fun Fact #2</li>
 				<li>Fun Fact #3</li>
 				<li>Fun Fact #4</li>
 			</ul>
-
+		</aside>
+		<a href="#" id="item-toggle">Item Toggle</a>
 </body>
 </html>
