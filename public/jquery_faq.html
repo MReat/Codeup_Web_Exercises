@@ -19,7 +19,7 @@
 			$('dd').css('padding', '20px');
 			$('div').click(function (e) {
 				e.preventDefault(); // probably don't need this preventDefault (only the anchor tag probably needs)
-				$('dd').fadeToggle(1000);
+				$('dd').slideToggle(5000);
 			});
 			$('#top-10-parks').css('border', 'solid green 5px').css('padding-left', '8px').css('margin-top', '10px').css('background-color', '#d8d8d8').css('margin-bottom','15px');
 			// 2nd section of the FAQ exercise
@@ -31,7 +31,7 @@
 			// using the toggle() method
 			$('aside').click(function (e) {
 				e.preventDefault();
-				$('li').fadeOut();
+				$('li').slideUp();
 			})
 			// using toggleClass() method
 			// $('li').click(function (e) {
@@ -42,8 +42,7 @@
 			// })
 			$('#item-toggle').on('click', function (e) {
 				e.preventDefault();
-				console.log(e);
-				$('li').fadeIn();
+				$('li').slideDown();
 			});
 
 		});
