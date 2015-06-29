@@ -18,7 +18,7 @@
 			$('#instructions').css('color', 'black');
 			$('dd').css('padding', '20px');
 			$('div').click(function (e) {
-				e.preventDefault();
+				e.preventDefault(); // probably don't need this preventDefault (only the anchor tag probably needs)
 				$('dd').toggle();
 			});
 			$('#top-10-parks').css('border', 'solid green 5px').css('padding-left', '8px').css('margin-top', '10px').css('background-color', '#d8d8d8').css('margin-bottom','15px');
@@ -29,21 +29,21 @@
 			});			
 			// Toggle Scripts
 			// using the toggle() method
-			// $('aside').click(function (e) {
-			// 	e.preventDefault();
-			// 	$('li').toggle();
-			// })
-			// using toggleClass() method
-			$('li').click(function (e) {
-				e.preventDefault;
-				console.log(e);
-				$(this).parent().addClass('invisible');
-
+			$('aside').click(function (e) {
+				e.preventDefault();
+				$('li').hide();
 			})
+			// using toggleClass() method
+			// $('li').click(function (e) {
+			// 	e.preventDefault;
+			// 	console.log(e);
+			// 	$(this).parent().addClass('invisible');
+
+			// })
 			$('#item-toggle').on('click', function (e) {
 				e.preventDefault();
 				console.log(e);
-				$('ul').toggleClass();
+				$('li').toggle();
 			});
 
 		});
