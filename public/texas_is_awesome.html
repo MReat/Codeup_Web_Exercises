@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title>Deep in the heart of Texas</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+    	#texas-flag {
+    		position: relative;
+    	}
+    	
+    	#texas-state {
+    		position: relative;
+    		margin-left: 200px;
+    		margin-top: 100px;
+    		height: 350px;
+    		width: 350px;
+    		
+    	}
+
+    	.invisible {
+    		display: none;
+    	}
+    
+    </style>
+</head>
+<body>
+	<button id='texas-heart'>Deep in the Heart</button>
+	
+	<div>
+		<img src="/img/texas-flag.png" id="texas-flag">
+		<img src='/img/texas-state.jpeg' class="invisible" id='texas-state'>
+	</div>
+	
+	<script>
+	'use strict';
+
+	(function (){
+		
+		$('#texas-flag').click(function  () {
+			$('#texas-flag')
+			.animate({left: '+=400'}, 1500)
+			.animate({top: '+=100'}, 1200)
+			.animate({left: '-=300'}, 1000)
+			.animate({top: '-=50'}, 800)
+			.animate({left: '+=50'}, 600)
+			// .animate({top: '+=500'}), 500
+			// .animate({left: '+=400'}, 400)
+			// .animate({top: '+=500'}, 200);
+		});
+		
+		$('#texas-heart').on('click', function () {
+			$('#texas-state').removeClass('invisible');
+		// 	$('#texas-state').animate({ //
+		// 		opacity: 0;
+		// 	} 1500, {
+		// 		$(this).fadeIn(1500);
+		// 	});
+		});
+	
+	})();
+
+	</script>
+
+</body>
+</html>
