@@ -1,0 +1,60 @@
+[
+    {
+        "title": "Hammer",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 20
+    }, {
+        "title": "Drill",
+        "quantity": 5,
+        "categories": [
+            "tool",
+            "powered"
+        ],
+        "price": 100
+    }, {
+        "title": "Mower",
+        "quantity": 5,
+        "categories": [
+            "tool",
+            "gas",
+            "outdoor"
+        ],
+        "price": 200
+    }, {
+        "title": "Screwdrivers",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 10
+    }, {
+        "title": "Saw",
+        "quantity": 50,
+        "categories": [
+            "tool",
+            "horror movies"
+        ],
+        "price": 25
+    }, {
+        "title": "Crowbar",
+        "quantity": 100,
+        "categories": [
+            "tool",
+            "burglery"
+        ],
+        "price": 10
+    }, {
+        "title": "Chainsaw",
+        "quantity": 25,
+        "categories": [
+            "Texas tool",
+            "gas",
+            "outdoor",
+            "powered"
+        ],
+        "price": 100
+    }
+]

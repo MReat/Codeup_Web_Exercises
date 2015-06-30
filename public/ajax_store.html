@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/ajax_store.css">
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<button id="refresh">Refresh Inventory</button>
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+<div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+'use strict';
+
+(function() {   
+    $(document).ready(function () {
+   
+        function updateInventory() {
+            var getInventory = $.get('/data/inventory.json').done(function (data) {
+                for (var i = 0; i < data.length; i+=1) {
+                    $('#insertProducts').append(
+                        "<tr><td>" + data[i].title + "</td><td>" 
+                        + data[i].quantity + "</td><td>" 
+                        + data[i].price + "</td><td>" 
+                        + data[i].categories + "</td></tr>")
+                }
+                alert("Inventory Data Loaded Successfully.");            
+            });
+            
+            getInventory.always(function (data) {
+                alert("Inventory Sent");
+            });
+
+            getInventory.fail(function (jqXhr, error) {
+                alert("Data Download Unsuccessful.  Self-Destruct Sequence Commencing....");
+                console.log(error);
+                console.log(getInventory.statusText);
+                console.log(getInventory.status);
+            });
+        };
+
+        // Update/Refresh Page
+        $('#refresh').click(function () {
+            $('#insertProducts').html(" ");
+            updateInventory();  
+            console.log('YO...I am working!')      
+        });        
+        
+        updateInventory();
+    });
+    
+})();
+
+</script>
+
+
+
+</body>
+</html>

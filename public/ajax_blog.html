@@ -1,0 +1,96 @@
+<html>
+<head>
+	<title>AJAX Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/custom-blog.css">
+
+</head>
+<body>
+	<button id="refresh">Refresh</button>
+	<div class="container">
+		<div id="posts">
+			<h2 class="title"></h2>
+			<p class="content"></p>
+			<p class="categories"></p>
+			<p class="date"></p>
+
+
+		</div>
+
+	</div>
+
+	<div id="addPost" class="container">
+		<form>
+			<input type="text" class="title" placeholder="Enter Title Here">
+			<input type="text" class="content" placeholder="Enter Content Here">
+			<input type="text" class="categories" placeholder="Enter Category(ies) Here">
+		</form>
+	</div>
+
+	<script>
+	"use strict";
+	(function () {
+		$(document).ready(function () {
+			function refreshPost () {
+				var getBlog = $.get('/data/blog.json').done(function (data) {
+					console.log(data);
+	                for (var i = 0; i < data.length; i+=1) {
+	                    $('#posts').append(
+	                        "<h2>" + data[i].title + "</h2><p>" 
+	                        + data[i].content + "</p><p>" + " Tags: "
+	                        + data[i].categories + "</p><p>" 
+	                        + data[i].date + "</p>")
+	                    console.log(data[i]);
+					}
+					console.log("Blog posts loaded successfully!");
+				})
+				 getBlog.always(function (data) {
+	                console.log("Blog load complete");
+	            });
+
+	            getBlog.fail(function (jqXhr, error) {
+	                alert("Data Download Unsuccessful.  Self-Destruct Sequence Commencing....");
+	                console.log(error);
+	                console.log(getInventory.statusText);
+	                console.log(getInventory.status);
+	            });
+			};
+
+			refreshPost();
+
+			$('#refresh').click(function () {
+				$('#posts').html("");
+				refreshPost();
+			});
+
+			var addPost = function (post) {
+				// add post  object to global posts array
+				// append post data to the page
+				// $.post('/data/blog.json', function (data){
+				// 	('<input .title>').html('.title');
+				// 	('<input .content>').html('.title');
+				// 	('<input .categories>').html('.title');
+					
+			};
+
+			var removePost = function (index) {
+				// find post for array by index
+				// splice post out of the array
+				// remove post element from page
+			};
+
+			var posts =[];
+
+			// TODO:
+			// attach event listener for new post form
+			// attach event listener for remove post function
+
+		})
+	})();
+
+
+	</script>
+
+</body>
+</html>
