@@ -8,23 +8,34 @@
 </head>
 <body>
 	<button id="refresh">Refresh</button>
+	<header>
+		<h1>My Blogs</h1>
+	</header>
 	<div class="container">
 		<div id="posts">
 			<h2 class="title"></h2>
 			<p class="content"></p>
 			<p class="categories"></p>
 			<p class="date"></p>
-
-
 		</div>
 
 	</div>
 
-	<div id="addPost" class="container">
+	<div id="addPost" class="container col-md-6">
 		<form>
-			<input type="text" class="title" placeholder="Enter Title Here">
-			<input type="text" class="content" placeholder="Enter Content Here">
-			<input type="text" class="categories" placeholder="Enter Category(ies) Here">
+			<div>
+				<label>Title</label>
+				<input type="text" class="title" id="post-title" placeholder="Enter Title Here">
+			</div>
+			<div>
+				<label>Content</label>
+				<textarea type="text" class="content" id="content-title" placeholder="Enter Content Here" cols="160" rows="8"></textarea>	
+			</div>
+			<div>
+				<label>Tags (please use commas between each)</label>
+				<input type="text" class="categories" id="tag-title" placeholder="Enter Category(ies) Here">
+				<button id="post-submit">Submit Post</button>
+			</div>
 		</form>
 	</div>
 
@@ -36,16 +47,13 @@
 				var getBlog = $.get('/data/blog.json').done(function (data) {
 					console.log(data);
 	                for (var i = 0; i < data.length; i+=1) {
-	                    $('#posts').append(
-	                        "<h2>" + data[i].title + "</h2><p>" 
-	                        + data[i].content + "</p><p>" + " Tags: "
-	                        + data[i].categories + "</p><p>" 
-	                        + data[i].date + "</p>")
+	                	addPost(data[i]);
 	                    console.log(data[i]);
 					}
 					console.log("Blog posts loaded successfully!");
-				})
-				 getBlog.always(function (data) {
+				});
+				 
+				getBlog.always(function (data) {
 	                console.log("Blog load complete");
 	            });
 
@@ -64,15 +72,42 @@
 				refreshPost();
 			});
 
+			var posts =[];
 			var addPost = function (post) {
-				// add post  object to global posts array
-				// append post data to the page
-				// $.post('/data/blog.json', function (data){
-				// 	('<input .title>').html('.title');
-				// 	('<input .content>').html('.title');
-				// 	('<input .categories>').html('.title');
-					
+				posts.push(post);
+
+				var header = '<h2>' + post.title + '</h3>';
+				var content = '<p>' + post.content + '</p>';
+				var categories = '<p>Categories: ' + post.categories + '</p>';
+				var date = '<p>Written: ' + post.date + '</p>';
+
+				var htmlString = header + content + categories + date + '</br>';
+
+				$('#post').append(htmlString);
+
+                // $('#posts').append(
+                //     "<h2>" + data.title + "</h2><p>" 
+                //     + data.content + "</p><p>" + " Tags: "
+                //     + data.categories + "</p><p>" 
+                //     + data.date + "</p>")
 			};
+
+			$('#post-submit').click(function (e) { 
+				e.preventDefault
+				// attach function to submit data from input fields in post section
+				var addTitle = $('post-title').val();
+				var addContent = $('post-content').val();
+				var addTag = $[""].split(', '); // test this code
+				var addDate = new Date().toString();
+
+				var post = {
+					"title": addTitle,
+					"content": addContent,
+					"categories": addTag,
+					"date": addDate
+				}
+			addPost(post);
+			})
 
 			var removePost = function (index) {
 				// find post for array by index
@@ -80,7 +115,6 @@
 				// remove post element from page
 			};
 
-			var posts =[];
 
 			// TODO:
 			// attach event listener for new post form
