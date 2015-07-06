@@ -1,7 +1,7 @@
 
 
 .well {
-	background-color: #99ffff;
+	background-color: #99ddff;
 	position: relative;
 }
 
@@ -25,7 +25,10 @@
 	font-weight: bold;
 }
 
-#mapRefresh {
+#map_address {
+	width: 350px;
+}
+#submitMap {
 	margin: 10px;
 }
 
