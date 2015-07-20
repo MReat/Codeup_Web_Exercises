@@ -5,9 +5,18 @@
 	position: relative;
 }
 
+h3.weatherDate {
+	/*font-size: 20px;
+	font-weight: bold;*/
+}
+
+.row {
+	/*font-size: 12px;*/
+}
 
 .weather {
 	width: 30%;
+	height: 300px;
 	background-color: #f0f0f0;
 	text-align: center;
 	display: inline-block;
@@ -17,7 +26,7 @@
 
 .temperature {
 
-	font-size: 15px;
+	/*font-size: 20px;*/
 	font-weight: bold;
 }
 
