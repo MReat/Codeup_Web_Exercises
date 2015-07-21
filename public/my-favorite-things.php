@@ -1,7 +1,17 @@
 <?php 
 
-$favorite_things = ['Carmen', 'Gaming', 'Eating', 'Sleeping', 'Insert-Blanking'];
+function pageController()
+{
+    // Initialize an empty data array.
+    $data = [];
 
+    // Add data to be used in the html view.
+    $data['favorite_things'] = ['Carmen', 'Gaming', 'Eating', 'Sleeping', 'Insert-Blanking'];;
+
+    // Return the completed data array.
+    return $data;    
+}
+extract(pageController());
 
 ?>
 <html>
