@@ -2,10 +2,12 @@
 
 var_dump($_GET);
 
+// practice using a function and passing to the pageController function
+
 function counterCalculate () {
 
 	if(isset($_GET['direction'])) {
-		var_dump($_GET['direction']);
+
 		$counter = $_GET['counter'];
 		if($_GET['direction'] == 'up') {
 			$counter ++;
@@ -19,16 +21,11 @@ function counterCalculate () {
 
 }
 
-function pageController()
+function pageController() 
 {
-    // Initialize an empty data array.
-    $data = [];
-
-    // Add data to be used in the html view.
-    $data['counter'] = counterCalculate();
-
-    // Return the completed data array.
-    return $data;    
+	$data = [];
+	$data['counter'] = counterCalculate();
+	return $data;    
 }
 
 extract(pageController());
@@ -36,16 +33,16 @@ extract(pageController());
 ?>
 <!doctype html>
 <html>
-    <head>
-        <title>Counter Exercise</title>
-    </head>
-    <body>
-       
-    	<h2><?= $counter ?></h2>
-        <a href="?direction=up&counter=<?= $counter ?>">Up</a>
-        <a href="?direction=down&counter=<?= $counter ?>">Down</a>
-        
+<head>
+	<title>Counter Exercise</title>
+</head>
+<body>
 
-        <h2></h2>
-    </body>
+	<h2><?= $counter ?></h2>
+	<a href="?direction=up&counter=<?= $counter ?>">Up</a>
+	<a href="?direction=down&counter=<?= $counter ?>">Down</a>
+
+
+	<h2></h2>
+</body>
 </html>

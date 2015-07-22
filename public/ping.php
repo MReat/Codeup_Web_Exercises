@@ -1,6 +1,5 @@
 <?php
-var_dump($_GET);
-
+// var_dump($_GET);
 
 function pageController()
 {
@@ -13,7 +12,8 @@ if(isset($_GET['direction'])){
         $_GET['count']++;
         $data['counter'] = $_GET['count'];
     } else if ($_GET['direction'] == 'pong'){
-        $data['counter'] = "Game Over";
+        $data['counter'] = 0;
+        echo "Game Over";
     }
 }
 return $data;    
@@ -26,6 +26,7 @@ extract(pageController());
 <html>
     <head>
         <title>Ping</title>
+        <link rel="stylesheet" type="text/css" href="/css/pingpong.css">
     </head>
     <body>
         <h1>PING</h1>

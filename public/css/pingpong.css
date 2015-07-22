@@ -1,0 +1,12 @@
+body{
+	background-color: #F0F0F0;
+	font-family: Verdana;
+}
+
+h2 {
+	font-size: 1.75em;
+}
+
+.container {
+	margin: auto;
+}
