@@ -2,30 +2,21 @@
 
 var_dump($_GET);
 
-// practice using a function and passing to the pageController function
-
-function counterCalculate () {
-
-	if(isset($_GET['direction'])) {
-
+function pageController() 
+{
+	$data = [];
+	if(isset($_GET['counter'])) {
 		$counter = $_GET['counter'];
 		if($_GET['direction'] == 'up') {
-			$counter ++;
-		} elseif ($_GET['direction'] == 'down')  {
-			$counter --;
+			$counter++;
+		} elseif ($_GET['direction'] == 'down') {
+			$counter--;
 		}
 	} else {
 		$counter = 0;
 	}
-	return $counter;
-
-}
-
-function pageController() 
-{
-	$data = [];
-	$data['counter'] = counterCalculate();
-	return $data;    
+	$data['counter'] = $counter;
+	return $data;
 }
 
 extract(pageController());
