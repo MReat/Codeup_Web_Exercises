@@ -1,31 +1,60 @@
 <?php
+session_start();
 
 if(!empty($_POST['name']) && !empty($_POST['password'])) {
 	if($_POST['name'] == "guest" && ($_POST['password'] == "password")) {
-		header('location: authorized.php');
+		$_SESSION['LOGGED_IN_USER'] = true;	
+		$_SESSION['name'] = 'guest';
+			header('location: authorized.php'); // always add an exit(); after a header(Location: ....);
+			exit();
+		} else {
+			echo "Login Failed";
+		}
 	} else {
-		echo "Login Failed";
+		echo "Please Enter Name and Password";
 	}
-} else {
-	echo "Please Enter Username/Password";
-}
 
 
+	if(isset($_SESSION['LOGGED_IN_USER'])) {
+		header('location: authorized.php');
+		exit();
+	}
 
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>POST Example</title>
-</head>
-<body>
-	<h1>Login Screen</h1>
-	    <form method="POST">
-	        <label>Name</label>
-	        <input type="text" name="name" value=""><br>
-	        <label>Password</label>
-	        <input type="password" name="password" value=""><br>
-	        <input type="submit">
-	    </form>
-</body>
-</html>
+
+	?>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>POST Example</title>
+		<style>
+		body {
+			
+			font-family: Verdana;
+			font-size: 1.5em;
+			background-color: #FAF0F5;
+		}
+
+		p {
+			font-weight: bolder;
+		}
+
+		.container {
+			margin: auto;
+			border: double black 5px;
+			padding: 20px;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<p>Login (enter below):</p>
+			<form method="POST">
+				<label>Name</label>
+				<input type="text" name="name" value="" placeholder="name"><br>
+				<label>Password</label>
+				<input type="password" name="password" value="" placeholder="password"><br>
+				<input type="submit">
+			</form>
+		</div>
+	</body>
+	</html>
