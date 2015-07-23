@@ -1,5 +1,5 @@
 <?php
-// var_dump($_GET);
+require '../functions.php';
 
 function pageController()
 {
@@ -35,5 +35,7 @@ extract(pageController());
         <a href="ping.php?direction=ping&count=<?= $counter ?>">HIT</a>
         <a href="?direction=pong&count=<?= $counter ?>">MISS</a>
     </div>
+
+
 </body>
 </html>
