@@ -16,7 +16,7 @@ if(Input::has('username') && Input::has('password')){
 
 
 if(Auth::check()) {
-	header('location: authorized.php'); // always add an exit(); after a header(Location: ....);
+	header('location: /authorized.php'); // always add an exit(); after a header(Location: ....);
 	exit();
 }
 
