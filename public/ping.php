@@ -1,5 +1,5 @@
 <?php
-require '../functions.php';
+require_once '../Input.php';
 
 function pageController()
 {
@@ -7,11 +7,12 @@ function pageController()
 
     $data['counter'] = 0;
 
-    if(isset($_GET['direction'])){
-        if ($_GET['direction'] == 'ping'){
-            $_GET['count']++;
-            $data['counter'] = $_GET['count'];
-        } else if ($_GET['direction'] == 'pong'){
+    if(Input::has('direction')){
+        if (Input::get('direction') == 'ping'){
+            $count = Input::get('count');
+            $count++;
+            $data['counter'] = $count;
+        } else if (Input::get('direction') == 'pong'){
             $data['counter'] = 0;
             echo "Game Over";
         }
