@@ -1,28 +1,24 @@
 <?php
+require_once '../functions.php';
+require_once '../Input.php';
+require_once '../Auth.php';
 session_start();
-require '../functions.php';
 
-
-if(!empty($_POST['name']) && !empty($_POST['password'])) {
-	if(escape(strtolower($_POST['name'])) == "guest" && (strtolower($_POST['password']) == "password")) {
-		$_SESSION['LOGGED_IN_USER'] = true;	
-		$_SESSION['name'] = 'guest';
-			header('location: authorized.php'); // always add an exit(); after a header(Location: ....);
-			exit();
-		} else {
-			echo "Login Failed";
-		}
-} else {
+if((!Input::has('username')) && (!Input::has('password'))) {
 	echo "Please Enter Name and Password";
 }
 
+if(Input::has('username') && Input::has('password')){
+	$username = escape(Input::get('username'));
+	$password = escape(Input::get('password'));
+	Auth::attempt($username, $password);
+} 
 
-if(isset($_SESSION['LOGGED_IN_USER'])) {
-	header('location: authorized.php');
+
+if(Auth::check()) {
+	header('location: authorized.php'); // always add an exit(); after a header(Location: ....);
 	exit();
 }
-
-
 
 ?>
 	
@@ -55,9 +51,9 @@ if(isset($_SESSION['LOGGED_IN_USER'])) {
 		<p>Login (enter below):</p>
 		<form method="POST">
 			<label>Name</label>
-			<input type="text" name="name" value="" placeholder="name"><br>
+			<input type="text" name="username" placeholder="username"><br>
 			<label>Password</label>
-			<input type="password" name="password" value="" placeholder="password"><br>
+			<input type="password" name="password" placeholder="password"><br>
 			<input type="submit">
 		</form>
 

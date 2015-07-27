@@ -1,10 +1,12 @@
 <?php
+// require_once '../Input.php';
 session_start();
+require_once '../Auth.php';
 
-if(isset($_SESSION['LOGGED_IN_USER'])) {
-	$username = $_SESSION['name'];
+if(Auth::check()) {
+	$username = $_SESSION['username'];
 } else {
-	header('location: login.php');
+	header("Location: login.php");
 	exit();
 }
 

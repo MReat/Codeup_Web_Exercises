@@ -1,9 +1,6 @@
 <?php 
-session_start();
-session_destroy();
+require_once '../Input.php';
+require_once '../Auth.php';
 
-$_SESSION['LOGGED_IN_USER'] = false;
-header('location: login.php');
-exit();
-
+Auth::logout();
 ?>
