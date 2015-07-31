@@ -28,7 +28,6 @@ class Input
     {
         // TODO: Fill in this function
  
-    
             return self::has($key) ? $_REQUEST[$key] : NULL;
             
 

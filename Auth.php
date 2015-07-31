@@ -32,7 +32,6 @@ class Auth
 	{
 		if(isset($_SESSION['LOGGED_IN_USER'])) {
 			return $username;
-			// return Input::get('name'); // check this later and see if it can replace above
 		} else {
 			header('location: login.php');
 			exit();
@@ -55,7 +54,6 @@ class Auth
 	    }
 
 		session_destroy();
-		// $_SESSION['LOGGED_IN_USER'] = false;
 	}
 		
 }
