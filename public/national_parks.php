@@ -54,8 +54,32 @@ $numberOfPages = floor($count / $limit);
 			</tr>	
 		<? endforeach; ?>
 	</table>
-
 </div>
+
+	<form role="form" method="POST" enctype="multipart/form-data" action="">
+	  <h2>Add Park</h2>
+		<div class="form-group">
+
+			<label for="name">Name:</label>
+			<input class="form-control" id="name" name="name" type="text" placeholder="NAME">
+
+			<label for="location">Location</label>
+			<input class="form-control" id="location" name="location" type="text" placeholder="LOCATION">
+
+			<label for="date_established">Date Established</label>
+			<input class="form-control" id="date_established" name="date_established" type="date_established" placeholder="DATE ESTABLISHED">
+
+			<label for="area_in_acres">Area (in acres)</label>
+			<input class="form-control" id="area_in_acres" name="area_in_acres" type="text" placeholder="AREA">
+
+			<label for="description">Description</label>
+			<input class="form-control" id="description" name="description" type="text" placeholder="DESCRIPTION">
+
+		</div>
+		
+		<button class="btn btn-default" type="submit" value="submit">Add</button>
+	</form>
+
 <ul class="pager">
 	<? // pagination ?>
 
