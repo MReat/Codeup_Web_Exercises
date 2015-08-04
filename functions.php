@@ -14,7 +14,7 @@ function inputGet($key) {
 
 function escape($input) {
 
-	return htmlspecialchars(strip_tags($input));
+	return trim(htmlspecialchars(strip_tags($input)));
 
 };
 

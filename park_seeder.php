@@ -2,8 +2,8 @@
 require_once 'parks_config.php';
 require_once 'db_connect.php';
 
-$truncateSql = 'TRUNCATE national_parks';
-$dbc->prepare($truncateSql);
+$truncateSql = 'TRUNCATE national_parks'; 
+$dbc->exec($truncateSql);
 
 $parks = [
 
