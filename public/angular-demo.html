@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>Angular Testing</title>
+</head>
+<body ng-app="glacierAngular">
+
+<h1>{{ "Hello Glacier!" | uppercase }}</h1>
+
+<p>Let's do math!!!! {{  38323243432 + 3829  - 88092092 / 3423423 | number:4 }} </p> 
+
+<!-- the pipe -> " | "  denotes a filter that applies to the left (i.e. uppercase, number: 4)-->
+<!-- look at ng-cloak to take the flash out of the page when rendering -->
+
+	<ul>NG If =
+		<li ng-if="1 < 2">One is less than two</li>
+		<li ng-if="1 <= 2">One is less than or equal to two</li>
+	    <li ng-if="1 == 2">One is Equal to Two</li>
+	    <li ng-if="1 >= 2">One is Greater Than or Equal to Two</li>
+	    <li ng-if="1 > 2">One is Greater Than Two</li>
+	</ul>
+
+
+	<ul>NG Show = (adds class="ng-hide" to items that don't qualify)
+		<li ng-show="1 < 2">One is less than two</li>
+		<li ng-show="1 <= 2">One is less than or equal to two</li>
+	    <li ng-show="1 == 2">One is Equal to Two</li>
+	    <li ng-show="1 >= 2">One is Greater Than or Equal to Two</li>
+	    <li ng-show="1 > 2">One is Greater Than Two</li>
+	</ul>
+
+	<ul>NG hide = (inverse of "if")
+		<li ng-hide="1 < 2">One is less than two</li>
+		<li ng-hide="1 <= 2">One is less than or equal to two</li>
+	    <li ng-hide="1 == 2">One is Equal to Two</li>
+	    <li ng-hide="1 >= 2">One is Greater Than or Equal to Two</li>
+	    <li ng-hide="1 > 2">One is Greater Than Two</li>
+	</ul>
+
+	<ol> Repeat Loop = 
+	    <li ng-repeat="letter in ['A', 'B', 'C', 'D', 'E', 'F']">{{ letter }}</li>
+	</ol>
+
+	<ul> Repeat Loop with if logic =
+	    <li ng-repeat="num in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" ng-if="num % 2 == 0">
+	        {{ num }} is even!
+	    </li>
+	</ul>
+
+	
+
+<script type="text/javascript" src="/js/angular.min.js"></script>
+<script type="text/javascript" src="/js/glacierAngular.js"></script>
+</body>
+</html>

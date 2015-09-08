@@ -1,7 +1,6 @@
-Matthew J. Reat, MBA (HOM)
+	Matthew J. Reat, MBA (HOM)
 
-2611 Eisenhauer Rd, Unit 1504 San Antonio, TX 78209
-Email: matthew.reat@hotmail.com Mobile: 512.680.4866
+Email: matthew.reat@hotmail.com 
 
 Qualification Summary
 I possess over 19 years of healthcare experience, holding executive positions in both hospitals and ambulatory settings, while consistently receiving progressive recognition and promotion.
@@ -18,7 +17,9 @@ Key Skills
 		HTML5
 		CSS3
 		JavaScript
+		JQuery
 		PHP
+		Laravel
 	Project Management
 		Agile/Lean Methodology
 		Github Management

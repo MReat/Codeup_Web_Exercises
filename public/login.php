@@ -1,24 +1,24 @@
 <?php
-require_once '../functions.php';
-require_once '../Input.php';
-require_once '../Auth.php';
-session_start();
+// require_once '../functions.php';
+// require_once '../Input.php';
+// require_once '../Auth.php';
+// session_start();
 
-if((!Input::has('username')) && (!Input::has('password'))) {
-	echo "Please Enter Name and Password";
-}
+// if((!Input::has('username')) && (!Input::has('password'))) {
+// 	echo "Please Enter Name and Password";
+// }
 
-if(Input::has('username') && Input::has('password')){
-	$username = escape(Input::get('username'));
-	$password = escape(Input::get('password'));
-	Auth::attempt($username, $password);
-} 
+// if(Input::has('username') && Input::has('password')){
+// 	$username = escape(Input::get('username'));
+// 	$password = escape(Input::get('password'));
+// 	Auth::attempt($username, $password);
+// } 
 
 
-if(Auth::check()) {
-	header('location: /authorized.php'); // always add an exit(); after a header(Location: ....);
-	exit();
-}
+// if(Auth::check()) {
+// 	header('location: /authorized.php'); // always add an exit(); after a header(Location: ....);
+// 	exit();
+// }
 
 ?>
 	

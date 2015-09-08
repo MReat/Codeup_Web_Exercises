@@ -23,16 +23,60 @@ $parks->bindValue(':offset', $offset, PDO::PARAM_INT);
 $parks->execute();
 $parks = $parks->fetchAll(PDO::FETCH_ASSOC);
 
+//errors array to store caught execeptions
+$errors = [];
+
 
 if (!empty($_POST)){
-    $stmt = $dbc->prepare('INSERT INTO national_parks (name, location, date_established, area_in_acres, description)
-            VALUES (:name, :location, :date_established, :area_in_acres, :description)');
-    $stmt->bindValue(':name', escape(Input::get('name')), PDO::PARAM_STR);
-    $stmt->bindValue(':location',  escape(Input::get('location')),  PDO::PARAM_STR);
-    $stmt->bindValue(':date_established',  escape(Input::get('date_established')),  PDO::PARAM_STR);
-    $stmt->bindValue(':area_in_acres',  str_replace(',', '', escape(Input::get('area_in_acres'))),  PDO::PARAM_STR);
-    $stmt->bindValue(':description',  escape(Input::get('description')),  PDO::PARAM_STR);
-    $stmt->execute();
+    // try {
+    // 	foreach($_POST as $key => $value) {
+    // 		if ($value == '') {
+    // 			throw new Exception ("Please add complete information to following: {'$key'}");
+    // 		}
+    // 	}
+
+    	$formData[] = $_POST;
+
+	    $stmt = $dbc->prepare('INSERT INTO national_parks (name, location, date_established, area_in_acres, description)
+	            VALUES (:name, :location, :date_established, :area_in_acres, :description)');
+
+	    foreach ($formData as $data) {
+	    	try {
+			    $stmt->bindValue(':name', escape(Input::getString('name')), PDO::PARAM_STR);
+			} catch (Exception $e) {
+				$errors[] = $e->getMessage();
+			}
+			
+			try {
+			    $stmt->bindValue(':location',  escape(Input::getString('location')),  PDO::PARAM_STR);
+			} catch (Exception $e) {
+				$errors[] = $e->getMessage();
+			}
+			
+			try {
+			    $stmt->bindValue(':date_established',  escape(Input::getString('date_established')),  PDO::PARAM_STR);
+			} catch (Exception $e) {
+				$errors[] = $e->getMessage();
+			}
+
+			try {
+			    $stmt->bindValue(':area_in_acres', escape(Input::getNumber('area_in_acres')),  PDO::PARAM_INT);
+			} catch (Exception $e) {
+				$errors[] = $e->getMessage();
+			}
+
+			try {
+		    $stmt->bindValue(':description',  escape(Input::getString('description')),  PDO::PARAM_STR);
+
+			} catch (Exception $e) {
+				$errors[] = $e->getMessage();
+			}
+
+			if(empty($errors)){
+			    $stmt->execute();
+			}
+		}
+		
 }
 
 ?>
@@ -47,6 +91,15 @@ if (!empty($_POST)){
 
 	<div class="container">
 		<h1>National Parks</h1>
+
+		<? if(isset($errors)) : ?>
+			<ul>
+			<? foreach ($errors as $error) : ?>
+				<li><? $error; ?></li>
+			<? endforeach; ?>
+			</ul>
+		<? endif; ?>
+
 		<div class="col-md-9" id="park">
 			<table class="table table-striped table-bordered">
 				<tr>
@@ -74,19 +127,19 @@ if (!empty($_POST)){
 			<div class="form-group">
 
 				<label for="name">Name:</label>
-				<input class="form-control" id="name" name="name" type="text" placeholder="NAME">
+				<input class="form-control" id="name" name="name" type="text" value="<? escape(Input::getString('name')); ?>" placeholder="NAME" min="1" max="200">
 
 				<label for="location">Location</label>
-				<input class="form-control" id="location" name="location" type="text" placeholder="LOCATION">
+				<input class="form-control" id="location" name="location" type="text" value="<? escape(Input::getString('location')); ?>" placeholder="LOCATION" min="1" max="200">
 
 				<label for="date_established">Date Established</label>
-				<input class="form-control" id="date_established" name="date_established" type="date" placeholder="DATE ESTABLISHED">
+				<input class="form-control" id="date_established" name="date_established" type="date" value="<? escape(Input::getString('date_established')); ?>"placeholder="DATE ESTABLISHED" min="1" max="200">
 
 				<label for="area_in_acres">Area (in acres)</label>
-				<input class="form-control" id="area_in_acres" name="area_in_acres" type="text" placeholder="AREA">
+				<input class="form-control" id="area_in_acres" name="area_in_acres" value="<? escape(Input::getNumber('area_in_acres')); ?>" type="number" placeholder="AREA" min="1" max="20">
 
 				<label for="description">Description</label>
-				<textarea class="form-control" id="description" name="description" placeholder="DESCRIPTION"></textarea>
+				<textarea class="form-control" id="description" name="description" value="<? escape(Input::getString('description')); ?>" placeholder="DESCRIPTION"min="1" max="2000"></textarea>
 
 			</div>
 			

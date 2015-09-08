@@ -2,14 +2,30 @@
 
 class Log
 {
-	public $filename;
-	public $handle;
+	private $filename;
+	private $handle;
 	
-	function __construct($prefix = "log")
+	public function __construct($prefix = "log")
 	{
-		$this->filename = $prefix . "-" . date('Y-m-d') . '.log';
+		// $this->filename = $prefix . "-" . date('Y-m-d') . '.log';
+		$this->setFilename($prefix);
+
 		$this->handle = fopen($this->filename, 'a');	
 	}
+
+	protected function setFilename($prefix)
+	{
+		// Set the date
+        $date = date('Y-m-d');
+        // Set the filename with user defined prefix.
+        if (is_string($prefix)) {
+            return $this->filename = "$prefix-" . $date . ".log";
+        } else {
+            die("NO string for set filename");
+        }
+	}
+
+	public 
 
 	public function logMessage($logLevel, $message)
 	{
@@ -26,9 +42,11 @@ class Log
 		return $this->logMessage("ERROR", $message);
 	}
 	
-	function __destruct ()
+	public function __destruct ()
 	{
-		fclose($this->handle);
+		if (isset($this->handle)) {
+			fclose($this->handle);
+		}
 	}
 	
 }
